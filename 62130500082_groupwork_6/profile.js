@@ -1,34 +1,49 @@
 const constraints = {
     firstname: {
-        presence: true,
+        presence: {
+            message: "is required"
+        }
     },
     lastname: {
-        presence: true,
+        presence: {
+            message: "is required"
+        }
     },
     age: {
-        presence: true,
+        presence: {
+            message: "is required"
+        },
         numericality: {
             lessThan: 150
         }
     },
     gender: {
-        presence: true,
+        presence: {
+            message: "is required"
+        }
     },
     email: {
-        presence: true,
+        presence: {
+            message: "is required"
+        },
         email: true
     },
     phone: {
-        presence: true,
+        presence: {
+            message: "is required"
+        },
         length: {
             minimum: 10,
             message: "must be at least 10 digits"
         },
     },
     description: {
-        presence: true
+        presence: {
+            message: "is required"
+        }
     }
 }
+
 
 const app = Vue.createApp({
     data() {
@@ -64,6 +79,8 @@ const app = Vue.createApp({
             if (!this.errors) {
                 alert("Your profile is updated successfully.")
             }
+
+
         }
     }
 })
